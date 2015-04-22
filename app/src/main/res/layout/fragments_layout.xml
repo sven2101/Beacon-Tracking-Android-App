@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeaconShowActivity" >
+
+
+    <fragment
+        android:id="@+id/activity_ranging_head"
+        android:name="de.beacon4transparence.HeadFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        tools:layout="@layout/activity_ranging_head" />
+
+    <fragment
+        android:id="@+id/activity_ranging"
+        android:name="de.beacon4transparence.BeaconFragment"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/activity_ranging" />
+
+
+
+</RelativeLayout>
