@@ -23,12 +23,16 @@ public class RangingService extends Service implements BeaconConsumer {
     //private final IBinder mBinder = new LocalBinder();
 
 
-    public void addItem(String beacon, String distance)
+    public void addItem(String beacon, String distance, String address, int typecode, int manufacturer)
     {
+        //BeaconShowActivity.progress.dismiss();
         HashMap<String, String> hm = new HashMap<String,String>();
-        hm.put("txt",beacon);
-        hm.put("cur","Distanz : " + distance+" meter");
-        hm.put("flag", Integer.toString(R.drawable.ic_launcher) );
+        hm.put("name",beacon);
+        hm.put("distance","Distanz : " + distance+" meter");
+        hm.put("address","Bluetooth Adresse : " + address);
+        hm.put("typecode","Beacon Type Code: " + typecode);
+        hm.put("manufacturer","Beacon HerstellerID: " + manufacturer);
+        hm.put("flag", Integer.toString(R.drawable.ic_action_bluetooth_connected) );
         BeaconShowActivity.aList.add(hm);
 
         Log.d("BackgroundService", "Aktualisiere meine ListView");
@@ -37,6 +41,7 @@ public class RangingService extends Service implements BeaconConsumer {
             @Override
             public void run() {
                 BeaconShowActivity.adapter.notifyDataSetChanged();
+                BeaconShowActivity.beaconFragment.showContent(true);
             }
         });
     }
@@ -45,11 +50,11 @@ public class RangingService extends Service implements BeaconConsumer {
         Log.d("BackgroundService", "suche Distanz zum aktualisieren...");
         for (int i = 0; i < BeaconShowActivity.aList.size(); i++)
         {
-            Log.d("BackgroundService", ""+BeaconShowActivity.aList.get(i).get("txt").toString()+" = "+beacon);
-            if(BeaconShowActivity.aList.get(i).get("txt").equals(beacon)) {
+            Log.d("BackgroundService", ""+BeaconShowActivity.aList.get(i).get("name").toString()+" = "+beacon);
+            if(BeaconShowActivity.aList.get(i).get("name").equals(beacon)) {
 
                 Log.d("BackgroundService", "Aktualisiere meine Distanz mit: " + distance);
-                BeaconShowActivity.aList.get(i).put("cur", "Distanz : " + distance+" meter");
+                BeaconShowActivity.aList.get(i).put("distance", "Distanz : " + distance+" meter");
 
                 BeaconShowActivity.ac.runOnUiThread(new Runnable() {
                     @Override
@@ -74,8 +79,12 @@ public class RangingService extends Service implements BeaconConsumer {
                     Log.d("BackgroundService", "Beacon gefunden: "+beacon.getBluetoothName());
                     if(!BeaconShowActivity.beaconName.contains(beacon.getBluetoothName()))
                     {
+                        beacon.getBeaconTypeCode();
+                        beacon.getBluetoothAddress();
+                        beacon.getManufacturer();
+
                         Log.d("BackgroundService", "Beacon hinzufügen: "+beacon.getBluetoothName());
-                        addItem(beacon.getBluetoothName(), String.format("%.2f", beacon.getDistance()));
+                        addItem(beacon.getBluetoothName(), String.format("%.2f", beacon.getDistance()), beacon.getBluetoothAddress(),beacon.getBeaconTypeCode(), beacon.getManufacturer());
                         BeaconShowActivity.beaconName.add(beacon.getBluetoothName());
                     }
                     else

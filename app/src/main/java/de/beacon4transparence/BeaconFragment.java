@@ -1,15 +1,18 @@
 package de.beacon4transparence;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.devspark.progressfragment.ProgressFragment;
 
-public class BeaconFragment extends Fragment {
+
+
+public class BeaconFragment extends ProgressFragment {
 
     //private static TextView textview;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -19,10 +22,23 @@ public class BeaconFragment extends Fragment {
 
         //textview = (TextView) v.findViewById(R.id.test);
         return v;
+
     }
 
-   /* public void changeTextProperties(int fontsize, String text)
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setContentView(R.layout.activity_ranging);
+        setContentShown(true);
+
+    }
+
+    public void showContent(boolean show)
     {
-        textview.setText(text);
-    }*/
+        if(show == true)
+            setContentShown(true);
+        else
+            setContentShown(false);
+    }
+
 }
