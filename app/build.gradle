@@ -23,7 +23,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:+'
     dependencies {
-        //compile project(':android-beacon-library')
-        compile 'org.altbeacon:android-beacon-library:2+@aar'
+        compile 'com.github.johnkil.android-progressfragment:progressfragment:1.4.+'
     }
+    dependencies {
+        compile 'org.altbeacon:android-beacon-library:2+'
+    }
+
+
 }

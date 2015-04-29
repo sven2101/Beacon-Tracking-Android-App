@@ -25,7 +25,6 @@ public class BeaconNotificationApplication extends Application implements Bootst
     private BackgroundPowerSaver backgroundPowerSaver;
     private boolean haveDetectedBeaconsSinceBoot = false;
     private MonitoringActivity monitoringActivity = null;
-    private RangingActivity rangingActivity = null;
 
 
     public void onCreate() {
