@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout android:id="@+id/addNetwork" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
+
+        <AutoCompleteTextView android:id="@+id/networkName" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Network name"
+            android:inputType="text" android:maxLines="1"
+            android:singleLine="true"/>
+
+        <EditText android:id="@+id/networkPassword" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Password" android:inputType="textPassword"
+            android:maxLines="1" android:singleLine="true" android:layout_marginTop="30dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

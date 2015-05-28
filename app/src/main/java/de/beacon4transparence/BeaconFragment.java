@@ -8,19 +8,16 @@ import android.view.ViewGroup;
 import com.devspark.progressfragment.ProgressFragment;
 
 
-
 public class BeaconFragment extends ProgressFragment {
 
-    //private static TextView textview;
+
+    public BeaconFragment(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_ranging, container, false);
 
-
-        //textview = (TextView) v.findViewById(R.id.test);
         return v;
 
     }
@@ -30,7 +27,6 @@ public class BeaconFragment extends ProgressFragment {
         super.onActivityCreated(savedInstanceState);
         setContentView(R.layout.activity_ranging);
         setContentShown(true);
-
     }
 
     public void showContent(boolean show)
@@ -40,5 +36,6 @@ public class BeaconFragment extends ProgressFragment {
         else
             setContentShown(false);
     }
+
 
 }

@@ -13,35 +13,17 @@
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".BeaconNotificationApplication"
         android:allowBackup="true"
         android:icon="@drawable/betrance_logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MonitoringActivity"
-            android:label="@string/title_activity_monitoring"
-            android:launchMode="singleInstance" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".RangingActivity"
-            android:label="@string/title_activity_ranging" >
-        </activity>
-        <activity
-            android:name=".BeaconShowActivity"
-            android:label="@string/title_activity_beacon_show"
-            android:parentActivityName=".MonitoringActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.beacon4transparence.MonitoringActivity" />
-        </activity>
-
+        android:theme="@style/Theme.Custom.Widget" >
         <service
             android:name=".RangingService"
             android:enabled="true"
@@ -49,8 +31,35 @@
         </service>
 
         <activity
-            android:name=".DetailsActivity"
-            android:label="@string/title_activity_details" >
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.beacon4transparence.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BeaconActivity"
+            android:label="@string/title_activity_beacon"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.beacon4transparence.MainActivity" />
         </activity>
     </application>
 
