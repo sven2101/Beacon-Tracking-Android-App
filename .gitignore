@@ -7,3 +7,7 @@
 .idea/workspace.xml
 build/intermediates/dex-cache/cache.xml
 build/intermediates/model_data.bin
+.idea/
+.gradle/
+beaconApp.iml
+build/
