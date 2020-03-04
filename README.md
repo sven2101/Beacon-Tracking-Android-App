@@ -2,6 +2,8 @@
  
 Kommunikationssysteme – Entwicklung eines Prototyps zur Erfassung von Bewegungsprofilen in Kooperation mit [Andreas Foitzik](https://github.com/andreasfoitzik/KS)
 
+**Note: Dieses Repository beinhaltet lediglich die Android App. Server und Webanwendung sind zu finden unter folgendem Repository https://github.com/andreasfoitzik/KS bzw. https://github.com/sven2101/KS **
+
 ## Beschreibung
 Die Idee von betrance basiert auf iBeacons. iBeacons sind einfache Bluetooth Sender mit diesen man z.B. standortabhängige Funktionen freischalten kann. Kombiniert man diese mit einer Smartphone App und einer Webanwendung können sehr gute und interessante Systeme entstehen. 
 
