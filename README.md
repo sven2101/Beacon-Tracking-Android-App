@@ -1,10 +1,12 @@
  # KS - Projekt im Rahmen von Prof. Dr. Udo Mueller an der Hochschule Karlsruhe - Technik und Wirtschaft
  
-Kommunikationssysteme – Entwicklung eines Prototyps zur erfassung von Bewegungsprofilen in Kooperation mit [Andreas Foitzik](https://github.com/andreasfoitzik/KS)
+Kommunikationssysteme – Entwicklung eines Prototyps zur Erfassung von Bewegungsprofilen in Kooperation mit [Andreas Foitzik](https://github.com/andreasfoitzik/KS)
 
 ## Beschreibung
-Die Idee von betrance basiert auf iBeacons. iBeacons sind einfache Bluetooth Sender, mit diesen man z.B. standortabhängige Funktionen freischalten kann. Kombiniert man diese mit einer Smartphone App und einer Webanwendung, können sehr gute und interessante Systeme entstehen. 
-Im Rahmen dieses Projekts haben wir uns für einen Bewegungsprofilersteller entschieden, mit welchem es möglich sein soll, anhand der iBeacons und der App die Laufwege einer Person aufzuzeigen. Unser System basiert auf drei verschiedenen Objekten Benutzern, Netzwerken und iBeacons.
+Die Idee von betrance basiert auf iBeacons. iBeacons sind einfache Bluetooth Sender mit diesen man z.B. standortabhängige Funktionen freischalten kann. Kombiniert man diese mit einer Smartphone App und einer Webanwendung können sehr gute und interessante Systeme entstehen. 
+
+Im Rahmen dieses Projekts haben wir uns für einen Bewegungstracker zur Erstellung von Bewegungsprofilen entschieden mit welchem es möglich sein soll, anhand der iBeacons und der App die Laufwege einer Person aufzuzeigen. Unser System basiert auf drei verschiedenen Objekten Benutzern, Netzwerken und iBeacons.
+
 Ein Netzwerk ist immer eindeutig und kann keinen oder mehrere iBeacons beinhalten. Ein Benutzer kann vorerst keinem oder mehreren Netzwerken hinzugefügt werden. Ist ein Benutzer in einem Netzwerk, dann kann er auch die Bewegungen in einem Netzwerk verfolgen.  
 
 ## Architektur
